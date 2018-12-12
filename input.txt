@@ -1,0 +1,47 @@
+//scan a, b, c
+in
+in
+in
+//calculate b^2
+popr rcx
+popr rbx
+pushr rbx
+pushr rbx
+mul
+popr rdx
+//calculate a*a*c
+popr rax
+push 4
+pushr rax
+pushr rcx
+mul
+mul
+popr rci
+//calculate discriminant
+pushr rdx
+pushr rci
+sub
+popr rdx
+//calculate x1
+pushr rbx
+push -1
+mul
+pushr rdx
+add
+pushr rax
+push 2
+mul
+div
+out
+//calculate x2
+pushr rbx
+push -1
+mul
+pushr rdx
+sub
+pushr rax
+push 2
+mul
+div
+out
+endf
